@@ -14,6 +14,7 @@
         "Version": "1.0.0"
     },
     "KPackageStructure": "Plasma/Applet",
-    "X-Plasma-API-Minimal": "declarativeappletscript",
+    "X-Plasma-API": "declarativeappletscript",
+    "X-Plasma-API-Minimum-Version": "6.0",
     "X-Plasma-MainScript": "ui/main.qml"
 }
