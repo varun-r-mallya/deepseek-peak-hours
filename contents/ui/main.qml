@@ -47,41 +47,23 @@ PlasmoidItem {
     compactRepresentation: MouseArea {
         id: compact
 
-        implicitWidth: compactRow.implicitWidth + Kirigami.Units.smallSpacing * 2
-        implicitHeight: compactRow.implicitHeight + Kirigami.Units.smallSpacing
+        readonly property int dotSize: Math.round(Kirigami.Units.gridUnit * 0.6)
+
+        implicitWidth: dotSize + Kirigami.Units.smallSpacing * 2
+        implicitHeight: dotSize + Kirigami.Units.smallSpacing
 
         onClicked: root.expanded = !root.expanded
 
-        RowLayout {
-            id: compactRow
-
+        Rectangle {
             anchors.centerIn: parent
-            spacing: Kirigami.Units.smallSpacing
+            width: compact.dotSize
+            height: width
+            radius: width / 2
+            color: root.statusColor
 
-            Rectangle {
-                Layout.alignment: Qt.AlignVCenter
-                implicitWidth: Math.round(Kirigami.Units.gridUnit * 0.6)
-                implicitHeight: implicitWidth
-                radius: width / 2
-                color: root.statusColor
-
-                Behavior on color {
-                    ColorAnimation {
-                        duration: Kirigami.Units.longDuration
-                    }
-                }
-            }
-
-            PlasmaComponents3.Label {
-                Layout.alignment: Qt.AlignVCenter
-                text: root.statusLabel
-                color: root.statusColor
-                font.weight: Font.DemiBold
-
-                Behavior on color {
-                    ColorAnimation {
-                        duration: Kirigami.Units.longDuration
-                    }
+            Behavior on color {
+                ColorAnimation {
+                    duration: Kirigami.Units.longDuration
                 }
             }
         }
@@ -149,23 +131,6 @@ PlasmoidItem {
                 text: Peak.scheduleText()
                 horizontalAlignment: Text.AlignRight
             }
-        }
-
-        Rectangle {
-            Layout.fillWidth: true
-            Layout.topMargin: Kirigami.Units.smallSpacing
-            Layout.preferredHeight: 1
-            color: Kirigami.Theme.textColor
-            opacity: 0.2
-        }
-
-        PlasmaComponents3.Label {
-            Layout.fillWidth: true
-            text: "Peak pricing applies Monday to Friday during the windows above. "
-                + "Weekends and all other hours are off-peak."
-            wrapMode: Text.WordWrap
-            opacity: 0.7
-            font.pointSize: Kirigami.Theme.smallFont.pointSize
         }
     }
 }
