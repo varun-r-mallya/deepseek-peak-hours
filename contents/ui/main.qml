@@ -90,6 +90,13 @@ PlasmoidItem {
 
                 PlasmaComponents3.Label {
                     Layout.alignment: Qt.AlignHCenter
+                    text: "DeepSeek API"
+                    opacity: 0.7
+                    font.pointSize: Kirigami.Theme.smallFont.pointSize
+                }
+
+                PlasmaComponents3.Label {
+                    Layout.alignment: Qt.AlignHCenter
                     text: root.statusLabel.toUpperCase()
                     color: root.statusColor
                     font.weight: Font.Bold
