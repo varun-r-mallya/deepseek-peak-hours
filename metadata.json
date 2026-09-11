@@ -1,0 +1,19 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "mallya"
+            }
+        ],
+        "Category": "Date and Time",
+        "Description": "Green while DeepSeek API pricing is off-peak, red while it is peak (IST, Mon-Fri)",
+        "Icon": "chronometer",
+        "Id": "io.github.varunrmallya.deepseekpeak",
+        "License": "MIT",
+        "Name": "DeepSeek Peak Hours",
+        "Version": "1.0.0"
+    },
+    "KPackageStructure": "Plasma/Applet",
+    "X-Plasma-API-Minimal": "declarativeappletscript",
+    "X-Plasma-MainScript": "ui/main.qml"
+}
